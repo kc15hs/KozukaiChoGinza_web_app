@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: KozukaiChoGinza_web_app
+    env: python
+    buildCommand: pip install -r requirements.txt && python -m ginza download
+    startCommand: python app.py
+    plan: free

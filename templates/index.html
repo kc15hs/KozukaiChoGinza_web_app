@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>小遣い帳アプリ</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h1>🎤 小遣い帳（音声入力対応）</h1>
+
+  <p>iPhoneをご利用の方は、テキスト欄をタップしてマイクボタン🎤から話しかけてください。</p>
+
+  <div>
+    <textarea id="speech-result" placeholder="例：コンビニでホットコーヒーをPayPayで購入250円" rows="2" cols="60"></textarea><br>
+    <button id="ok-btn">OK</button>
+  </div>
+
+  <hr>
+
+  <h2>📝 登録済みリスト</h2>
+  <table border="1" cellspacing="0" cellpadding="6">
+    <thead>
+      <tr>
+        <th>日時</th>
+        <th>金額</th>
+        <th>品物</th>
+        <th>店舗</th>
+        <th>支払い方法</th>
+        <th>メモ</th>
+        <th>削除</th>
+      </tr>
+    </thead>
+    <tbody id="entry-list">
+      {% for entry in entries %}
+      <tr>
+        <td>{{ entry.datetime }}</td>
+        <td>¥{{ entry.金額 }}</td>
+        <td>{{ entry.品物 }}</td>
+        <td>{{ entry.店舗 }}</td>
+        <td>{{ entry.支払い方法 }}</td>
+        <td>{{ entry.元テキスト }}</td>
+        <td><button class="delete" data-index="{{ loop.index0 }}">削除</button></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
