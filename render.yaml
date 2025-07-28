@@ -3,5 +3,5 @@ services:
     name: KozukaiChoGinza_web_app
     runtime: python
     pythonVersion: 3.10
-    buildCommand: "pip install -r requirements.txt"
+    buildCommand: "pip install -r requirements.txt && python -m ginza download"
     startCommand: "python app.py"
