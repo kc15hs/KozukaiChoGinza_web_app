@@ -2,6 +2,7 @@ services:
   - type: web
     name: KozukaiChoGinza_web_app
     env: python
-    buildCommand: pip install -r requirements.txt && python -m ginza download
-    startCommand: python app.py
-    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "python app.py"
+    pythonVersion: 3.10
+
