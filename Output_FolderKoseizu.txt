@@ -1,0 +1,11 @@
+KozukaiChoGinza_web_app/
+├── static/
+│   ├── main.js
+│   └── style.css
+├── templates/
+│   └── index.html
+├── app.py
+├── data.json
+├── Folder_KozukaiChoGinza_web_app.txt
+├── render.yaml
+└── requirements.txt

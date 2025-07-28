@@ -1,0 +1,10 @@
+KozukaiChoGinza_web_app/
+├── app.py                   # Flask本体。音声入力テキストをGiNZAで解析して保存
+├── requirements.txt         # 必要なPythonパッケージ（Flask, GiNZA, spaCy）
+├── render.yaml              # Render用のデプロイ設定ファイル（build/start指定）
+├── data.json                # 登録された支出データを保存するJSONファイル（初回は空の[]）
+├── templates/               # Flaskが使用するHTMLテンプレート格納フォルダ
+│   └── index.html           # 入力フォームとリスト表示を含むメイン画面
+├── static/                  # 静的ファイルを格納（CSSやJSなど）
+│   ├── style.css            # アプリの見た目を整えるCSS（任意）
+│   └── main.js              # OKボタンでテキストをサーバに送信するJS
